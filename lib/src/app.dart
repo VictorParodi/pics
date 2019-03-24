@@ -9,6 +9,10 @@ class App extends StatefulWidget {
 class AppState extends State<App> {
   var counter = 0;
 
+  void fetchImage() {
+    setState(() => counter += 10);
+  }
+
   Widget build(context) {
     return (
       MaterialApp(
@@ -16,7 +20,7 @@ class AppState extends State<App> {
           body: Text('$counter'),
           floatingActionButton: FloatingActionButton(
             child: Icon(Icons.add),
-            onPressed: () => setState(() => counter += 1),
+            onPressed: fetchImage,
           ),
 
           appBar: AppBar(
